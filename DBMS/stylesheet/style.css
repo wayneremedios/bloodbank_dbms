@@ -109,6 +109,11 @@ a:active{
  	text-align: center;
  }
 
+ .stock_padding{
+	 padding-bottom: 21px;
+	 padding-top: 20px;
+ }
+
  .block h3{
  	font-weight: 800;
  }
