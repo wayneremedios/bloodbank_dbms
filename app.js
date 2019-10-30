@@ -3,8 +3,6 @@ const app=express()
 const bodyParser=require('body-parser')
 const mysql=require('mysql')
 
-
-
 app.use(bodyParser.urlencoded({extended:false}))
 
 app.use(express.static('./DBMS'))
