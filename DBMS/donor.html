@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blood Donation-Donor</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="head1">
+		<h1>Add A Donor</h1>
+	</header>
+
+	<div class="container">
+			
+
+			<section class="box-4">
+				<form class="donor-form" action="/donor_add" method="POST">
+					<!--<div class="form-group">
+						<label>Donor Id: </label>
+						<input type="text" name="d_id">
+					</div>-->
+					<div class="form-group">
+						<label>Donor First Name: </label>
+						<input type="text" name="d_fname">
+					</div>
+					<div class="form-group">
+						<label>Donor Last Name: </label>
+						<input type="text" name="d_lname">
+					</div>
+					<div class="form-group">
+						<label>Blood Group: </label>
+						<input type="text" name="d_bldg">
+					</div>
+					<div class="form-group">
+						<label>Weight: </label>
+						<input type="text" name="d_wt">
+					</div>
+					<div class="form-group">
+						<label>Gender: </label>
+						<input type="radio" value="Male" name="d_gender">Male 
+						<input type="radio" value="Female" name="d_gender">Female
+						<input type="radio" value="Other" name="d_gender" >Other
+					</div>
+
+					<div class="form-group">
+						<label>Date Of Birth: </label>
+						<input type="date" name="d_dob">
+					</div>
+					<div class="form-group">
+						<label>Email: </label>
+						<input type="email" name="d_email">
+					</div>
+					
+					<div class="form-group">
+						<label>Contact No.: </label>
+						<input type="text" name="d_contact">
+					</div>
+					<div class="form-group">
+						<label>Address: </label>
+						<input type="text" name="d_address">
+					</div>
+				
+				<input class="button" type="submit" value="Submit">
+				</form>
+			</section>
+
+			
+		</div>
+
+</body>
+</html>

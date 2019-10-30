@@ -1,0 +1,120 @@
+body{
+	/*background-image: url('../images/index1.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;*/
+	color: #555555;
+
+
+	/*font: normal 16px Arial,Helvetica,
+	sans-serif;*/
+	width: 100%;
+	line-height: 1.6em;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover{
+	color: red;
+}
+
+a:active{
+	color: green;
+}
+.button{
+ 	background-color: grey;
+ 	color: #fff; 
+ 	padding: 10px 15px;
+ 	margin-top: 15px;
+ 	border:none;
+ }
+.clr{
+	clear: both;
+}
+.container{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+.head1{
+	min-height: 60px;
+	text-align: center;
+	/*font-family: Tahoma;*/
+	font-style: bold;
+	font-weight: 800;
+	background-color: #333;
+	color: white;
+	padding:5px;
+	margin:none;
+	border: :5px black solid;
+}
+
+
+.box1{
+	background-color: #333;
+	color: #fff;
+	width:40%;
+	min-height: 250px;
+	/*border:5px black solid;*/
+	padding-top: 20px;
+	padding-bottom: : 20px;
+	padding-right: : 20px;
+	padding-left: : 20px;
+
+
+	margin:100px auto;
+	border-radius: 15px;
+}
+
+.box-2{
+	margin:150px auto;
+}
+
+.box-3{
+	margin-top: 200px;
+}
+
+.box-4{
+	width: 80%;
+	margin: 20px ;
+	padding:20px
+	width:80%; 
+}
+.login-form{
+	text-align: center;
+
+}
+
+.login-form label{
+	display: block;
+	padding:10px;
+}
+
+
+ .foot{
+ 	text-align: center;
+ 	/*background-color: #333;*/
+ 	
+ }
+.block{
+ 	float: left;
+ 	width: 33.3%;
+ 	border:1px solid #ccc;
+ 	padding: 10px;
+ 	box-sizing: border-box;
+ 	text-align: center;
+ }
+
+ .block h3{
+ 	font-weight: 800;
+ }
+
+.donor-form label{
+	display: block;
+
+
+}
