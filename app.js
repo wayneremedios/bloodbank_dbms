@@ -15,57 +15,63 @@ function getConnection()	{
 	})
 }
 
-//ADD A DONOR
+//DONOR
 app.post('/donor_add',(req,res)=>{
 	console.log("Trying to create a new donor..")
 
-	console.log("First name:"+ req.body.d_fname)
-
-	const queryString="INSERT into donor (dfname,dlname) VALUES (?,?)"
-	getConnection().query(queryString,[req.body.d_fname,req.body.d_lname],(err, results, fields)=>{
+	//add in donor
+	const queryString1="INSERT into donor (dfname,dlname,ddob,dgender,dwt,dbgroup,dphone, daddr,demail) VALUES (?,?,?,?,?,?,?,?,?)"
+	getConnection().query(queryString1,[req.body.d_fname,req.body.d_lname,req.body.d_dob,req.body.d_gender,req.body.d_wt,req.body.d_bldg,req.body.d_contact,req.body.d_address,req.body.d_email],(err, results, fields)=>{
 		if(err){
 			console.log("Failed"+ err)
 			res.sendStatus(500)
 			return
 		}
-
-	console.log("Inserted with id")
 	res.end()
 	})
 
-	//res.end()
+	//add in blood
+	const queryString2="INSERT into blood (bgroup) VALUES (?)"
+	getConnection().query(queryString2,[req.body.d_bldg],(err, results, fields)=>{
+		if(err){
+			console.log("Failed"+ err)
+			res.sendStatus(500)
+			return
+		}
+	res.end()
+	})
+
+	//add in stock
+	//console.log("bg: "+req.body.b_bldg)
+	const queryString3="update stock set stock.amt = stock.amt + 1 where stock.bgroup=?"
+	getConnection().query(queryString3,[req.body.d_bldg],(err,results,fields)=>{
+		if(err){
+			console.log("Failed"+err)
+			res.sendStatus(500)
+			return
+		}
+		res.end()
+	})
+	console.log("added to stock")
 })
 
-app.get('/stock',(req,res)=>{
-console.log("Fetching user with id: "+ req.params.did)
-const connection=getConnection()
+//PATIENT
+app.post('/add_patient',(req,res)=>{
+	console.log("Trying to add a new patient..")
 
-
-const userId=req.params.did
-const queryString="SELECT * from donor "
-connection.query(queryString,(err,rows,fields)=>{
-	console.log("Successful ")
-	res.json(rows)
+	//add in patient
+	const queryString1="INSERT into patient (pfname,plname,pbgroup,pbloodamt,pphone,paddr,pemail) VALUES (?,?,?,?,?,?,?)"
+	getConnection().query(queryString1,[req.body.p_fname,req.body.p_lname,req.body.p_bldg,req.body.p_amt,req.body.p_contact,req.body.p_address,req.body.p_email],(err, results, fields)=>{
+		if(err){
+			console.log("Failed"+ err)
+			res.sendStatus(500)
+			return
+		}
+	res.end()
+	})
 })
-
-//res.end()
-})
-
-
-
-app.get("/",(req,res) =>{
-	console.log("Responding to root route")
-	res.send("Hello from Root")
-})
-
-app.get("/users",(req,res) =>{
-	var user1={firstName:"Stephe",lastName:"Curry"}
-	res.json(user1)
-})
-
-
 
 //localhost:3003
 app.listen(3003,() =>{
-	console.log("Server is up andd listening on 3003...")
+	console.log("Server is up and listening on 3003...")
 })
